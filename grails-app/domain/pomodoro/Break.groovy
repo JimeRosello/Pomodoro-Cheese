@@ -7,9 +7,9 @@ class Break extends Interval {
     boolean active;
 
     public Break() {
-      /*if ((App.pomodoroCount % 4) == 0)
+      if ((App.pomodoroCount % 4) == 0)
         duration = Configuration.longRestDurationInMinutes;
-      else*/
+      else
         duration = Configuration.shortRestDurationInMinutes;
       active = false;
       start();
@@ -30,7 +30,7 @@ class Break extends Interval {
     public void finish() {
       active = false;
 
-      //App.updateInterval(new Pomodoro());
+      App.updateInterval(new Pomodoro());
     }
 
     static constraints = {

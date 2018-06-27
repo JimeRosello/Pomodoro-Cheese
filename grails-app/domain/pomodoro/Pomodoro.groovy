@@ -26,8 +26,8 @@ class Pomodoro extends Interval {
 
     public void finish() {
       active = false;
-      //App.pomodoroCount++;
-      //App.updateInterval(new Break());
+      App.pomodoroCount++;
+      App.updateInterval(new Break());
     }
 
     static constraints = {
