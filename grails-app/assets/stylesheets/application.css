@@ -1,0 +1,206 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require bootstrap
+*= require grails
+*= require main
+*= require mobile
+*= require_self
+*/
+
+
+body {
+  background-color: rgba(238,166,62, 0.3);
+  color: /*#C64519;*/#D40000;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+  font-family: Georgia;
+}
+
+#background {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('back.jpg');
+  margin: -0.5em;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+  z-index: -1;
+  position: absolute;
+}
+
+.navbar-nav > li > a:hover {
+  background-color: /*rgba(168,69,25,0.5)*/rgba(212,0,0,0.8) !important;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: /*rgba(168,69,25,0.5)*/rgba(212,0,0,0.8)!important;
+}
+
+.nav li.dropdown.open ul.dropdown-menu {
+  background-color: /*rgba(168,69,25,0.5)*/rgba(212,0,0,0.8) !important;
+  box-shadow: none;
+  border: none;
+}
+
+li.dropdown-option {
+  float: none !important;
+}
+
+.dropdown-menu, a {
+  text-align: center;
+  font-family: inherit;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: /*rgba(255,245,117,0.5)*/#FFAE00;
+}
+
+.nav li {
+  margin: auto;
+  width: auto;
+}
+
+.navbar.navbar-default.navbar-static-top {
+  background-color: /*rgba(168,69,25,0.5);*/rgba(212,0,0,0.3);
+}
+
+main {
+  margin: 10vh auto auto auto;
+  width: 90vw;
+}
+
+aside, .board {
+  display: inline-block;
+  vertical-align: top;
+  padding: 2vw;
+}
+
+.imageButton {
+  width: 2em;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+  -moz-filter: invert(100%);
+}
+
+.sideBar, li.button {
+  font-size: 1.2em;
+  list-style-type: none;
+  margin: 0 1vw 3vh 1vw;
+  text-align: center;
+}
+
+.button {
+  background-color: /*rgba(168,69,25,0.8);*/rgba(212,0,0,0.8);
+  padding: 0.5em;
+  border-radius: 1em;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  font-family: inherit;
+  -webkit-transition: 0.1s ease-out all;
+}
+
+.button:hover {
+  background-color: /*#E9AF5C*/#FFAE00;
+  -webkit-transition: 0.1s ease-out all;
+}
+
+.button, a, a:hover, a:visited, a:active{
+  color: white;
+  text-decoration: none;
+  -webkit-transition: 0.1s ease-out all;
+}
+
+.addTaskButton {
+  background-color: rgba(212,0,0,0.8);
+  padding: 0.5em;
+  border-radius: 1em;
+  font-size: 16px;
+  width: 10em;
+  height: auto;
+  vertical-align: middle;
+  text-align: center;
+  margin: auto;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  font-family: inherit;
+  -webkit-transition: 0.1s ease-out all;
+}
+
+.addTaskButton:hover {
+  background-color: /*#E9AF5C*/#FFAE00;
+  -webkit-transition: 0.1s ease-out all;
+}
+
+.dropdown-menu {
+  background-color: #008000;
+}
+
+.navbar-brand img {
+  width: auto;
+}
+
+.board {
+  height: 60vh;
+  width: 70vw;
+  border-radius: 2em;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.boardContent, .boardColumn {
+  display: inline-block;
+  list-style: none;
+}
+
+.boardColumn {
+  width: 22vw;
+  text-align: center;
+}
+
+.boardContent {
+  width: inherit;
+}
+
+.taskList {
+  min-height: 40vh;
+}
+
+.task {
+  border-radius: 0.5em;
+  background-color: rgba(255,255,255,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  list-style: none;
+  min-height: 2em;
+  width: 20vw;
+  text-align: center;
+  margin: 1.2em auto auto auto;
+}
+
+.popup {
+  background-color: rgba(255,208,107,0.8);
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+  border-radius: 3em;
+  -webkit-transition: 0.2s ease-in all;
+  height: 80vh;
+  width: 80vw;
+  position: fixed;
+  margin: auto;
+  top: 10vh;
+  left: 10vw;
+  z-index: 1000;
+  visibility: hidden;
+  text-align: right;
+}
+
+a.close {
+  font-family: sans-serif;
+  margin: 1.3em;
+  color: #D40000;
+  z-index: 10000;
+  opacity: 1;
+}
