@@ -24,20 +24,16 @@ class App {
     }*/
 
     User user;
-    Board activityBoard;
-    public Interval currentInterval = new None();
+    //public Interval currentInterval = new None();
     public static int pomodoroCount = 0;
+    Board board = new Board(); 
 
-    public App() {
-      activityBoard = new Board();
+    public void start() {
+      //currentInterval = currentInterval.start();
     }
 
-    public start() {
-      currentInterval = currentInterval.start();
-    }
-
-    public static updateInterval(Interval interval) {
-      App.currentInterval = interval;
+    public static void updateInterval(/*Interval interval*/) {
+      //App.currentInterval = interval;
     }
 
     static constraints = {
