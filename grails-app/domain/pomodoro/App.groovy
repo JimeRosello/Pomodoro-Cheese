@@ -2,13 +2,18 @@ package pomodoro
 
 class App {
 
+    User user;
+    static Interval currentInterval = new None();
+    public static int pomodoroCount = 0;
+    Board board = new Board();
+
+    // Public enums
     static enum Duration {
       LONG,
       SHORT
     };
 
     static enum ColorScheme {
-
     };
 
     static enum Feeling {
@@ -22,11 +27,6 @@ class App {
       THIS_WEEK,
       THIS_MONTH
     }*/
-
-    User user;
-    public Interval currentInterval = new None();
-    public static int pomodoroCount = 0;
-    Board board = new Board(); 
 
     public void start() {
       currentInterval = currentInterval.start();

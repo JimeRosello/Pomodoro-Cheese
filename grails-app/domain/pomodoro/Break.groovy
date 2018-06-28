@@ -34,8 +34,7 @@ class Break extends Interval {
 
     public void finish() {
       active = false;
-
-      //App.updateInterval(new Pomodoro());
+      App.updateInterval(new Pomodoro());
     }
 
     static constraints = {
