@@ -7,6 +7,7 @@ class Pomodoro extends Interval {
 
     Task task;
     boolean active;
+    String workNotif = "Time to work!";
 
     public Pomodoro() {
       duration = Configuration.workDurationInMinutes;
@@ -16,6 +17,7 @@ class Pomodoro extends Interval {
 
     public void start() {
       if (!active) {
+        App.notify(workNotif);
         active = true;
         long startTime = System.currentTimeMillis();
         endTime = startTime + duration * 60 * 1000;

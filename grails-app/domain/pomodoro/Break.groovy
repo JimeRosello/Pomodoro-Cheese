@@ -7,12 +7,17 @@ class Break extends Interval {
 
     LeisureActivity activity;
     boolean active;
+    String shortBreakNotif = "Time for a short break!";
+    String longBreakNotif = "Time for a long break!";
 
     public Break() {
-      if ((App.pomodoroCount % 4) == 0)
+      if ((App.pomodoroCount % 4) == 0) {
+        App.notify(longBreakNotif);
         duration = Configuration.longRestDurationInMinutes;
-      else
+      } else {
+        App.notify(shortBreakNotif);
         duration = Configuration.shortRestDurationInMinutes;
+      }
       active = false;
       start();
     }

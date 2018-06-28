@@ -36,6 +36,10 @@ class App {
       App.currentInterval = interval;
     }
 
+    public static void notify(String message) {
+      // TO DO: Implement
+    }
+
     static constraints = {
     }
 }
