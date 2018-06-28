@@ -2,8 +2,8 @@ package pomodoro
 
 class App {
 
-    User user;
-    static Interval currentInterval = new None();
+    private User user;
+    private static Interval currentInterval = new None();
     public static int pomodoroCount = 0;
     public static Board board = new Board();
 
