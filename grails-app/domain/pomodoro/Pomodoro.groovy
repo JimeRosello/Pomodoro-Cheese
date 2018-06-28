@@ -17,9 +17,7 @@ class Pomodoro extends Interval {
         active = true;
         long startTime = System.currentTimeMillis();
         long endTime = startTime + duration;// * 60 * 1000;
-        while (System.currentTimeMillis() < endTime) {
-          TimeUnit.MILLISECONDS.sleep(1);
-        }
+        TimeUnit.MILLISECONDS.sleep(duration);
         finish();
       }
     }
