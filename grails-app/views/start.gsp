@@ -45,7 +45,7 @@
                           </ul>
                         </div>
                       </div>-->
-          <a href="#"><div class="addTaskButton" role="contentinfo">Add task</div></a>
+          <a href="#"><div class="addTaskButton" role="contentinfo">Start</div></a>
       </section>
     </main>
 
