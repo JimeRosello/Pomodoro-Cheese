@@ -5,7 +5,7 @@ class App {
     User user;
     static Interval currentInterval = new None();
     public static int pomodoroCount = 0;
-    Board board = new Board();
+    public static Board board = new Board();
 
     // Public enums
     static enum Duration {
@@ -38,6 +38,11 @@ class App {
 
     public static void notify(String message) {
       // TO DO: Implement
+    }
+
+    public static void increasePomodorosInCurrentTask() {
+      if (App.board.inProgress != null)
+        App.board.inProgress.pomodoros++;
     }
 
     static constraints = {

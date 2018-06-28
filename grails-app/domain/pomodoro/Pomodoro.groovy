@@ -34,6 +34,7 @@ class Pomodoro extends Interval {
     public void finish() {
       active = false;
       App.pomodoroCount++;
+      App.increasePomodorosInCurrentTask(); 
       App.updateInterval(new Break());
     }
 

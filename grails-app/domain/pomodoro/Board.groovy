@@ -8,7 +8,9 @@ class Board {
 
     public void addPendingTask(Task task) {
       toDo.add(task);
-      toDo = toDo.sort{x,y -> x.priority <=> y.priority ?: x.estimatedPomodoros <=> y.estimatedPomodoros};
+      toDo = toDo.sort{
+        x,y -> x.priority <=> y.priority ?: x.estimatedPomodoros <=> y.estimatedPomodoros
+      };
     }
 
     public void completeTaskInProgress() {

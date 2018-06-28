@@ -6,6 +6,9 @@ class Task extends Activity {
     double estimatedPomodoros;
     int priority;
 
+    public void complete() {
+      
+    }
     static constraints = {
     }
 }
