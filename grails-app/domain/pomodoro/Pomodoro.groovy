@@ -16,7 +16,7 @@ class Pomodoro extends Interval {
       if (!active) {
         active = true;
         long startTime = System.currentTimeMillis();
-        long endTime = startTime + duration * 60 * 1000;
+        long endTime = startTime + duration;// * 60 * 1000;
         while (System.currentTimeMillis() < endTime) {
           TimeUnit.MILLISECONDS.sleep(1);
         }
@@ -27,7 +27,7 @@ class Pomodoro extends Interval {
     public void finish() {
       active = false;
       App.pomodoroCount++;
-      App.updateInterval(new Break());
+      //App.updateInterval(new Break());
     }
 
     static constraints = {

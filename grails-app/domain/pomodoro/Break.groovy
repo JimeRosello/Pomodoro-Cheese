@@ -19,7 +19,7 @@ class Break extends Interval {
       if (!active) {
         active = true;
         long startTime = System.currentTimeMillis();
-        long endTime = startTime + duration * 60 * 1000;
+        long endTime = startTime + duration;// * 60 * 1000;
         while (System.currentTimeMillis() < endTime) {
           TimeUnit.MILLISECONDS.sleep(1);
         }
@@ -30,7 +30,7 @@ class Break extends Interval {
     public void finish() {
       active = false;
 
-      App.updateInterval(new Pomodoro());
+      //App.updateInterval(new Pomodoro());
     }
 
     static constraints = {
