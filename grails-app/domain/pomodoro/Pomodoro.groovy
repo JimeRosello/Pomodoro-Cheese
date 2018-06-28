@@ -1,5 +1,7 @@
 package pomodoro
 import java.util.concurrent.TimeUnit
+import java.lang.Thread
+import java.lang.Runnable
 
 class Pomodoro extends Interval {
 
@@ -16,9 +18,14 @@ class Pomodoro extends Interval {
       if (!active) {
         active = true;
         long startTime = System.currentTimeMillis();
-        long endTime = startTime + duration;// * 60 * 1000;
-        TimeUnit.MILLISECONDS.sleep(duration);
-        finish();
+        endTime = startTime + duration * 60 * 1000;
+        Runnable wait = new Runnable() {
+          public void run() {
+              TimeUnit.MILLISECONDS.sleep(duration);
+              finish();
+          }
+        };
+        new Thread(wait).start();
       }
     }
 
