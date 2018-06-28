@@ -6,6 +6,7 @@ class App {
     private static Interval currentInterval = new None();
     public static int pomodoroCount = 0;
     public static Board board = new Board();
+    public static Configuration configuration = new Configuration(); 
 
     // Public enums
     static enum Duration {
