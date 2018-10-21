@@ -1,4 +1,4 @@
-# Pomodoro-Cheese
+# Pomodoro (& Cheese) 
 ### Jimena Roselló (jimena.rosello@gmail.com) 
 #
 
