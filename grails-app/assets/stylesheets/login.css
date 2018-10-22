@@ -1,5 +1,6 @@
 body {
-  background-color: /*#C64519;*/rgba(238,166,62, 1);
+  background-color: rgba(238,166,62, 0.3);
+  /* rgba(238,166,62, 1); */
   text-align: center;
   overflow: hidden;
 }
@@ -11,7 +12,7 @@ body {
   margin: -0.5em;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.6;
+  opacity: 0.4;
   z-index: -1;
   position: absolute;
 }
@@ -42,10 +43,10 @@ main {
 }
 
 .box {
-  color: /*#C64519;*/#D40000;
+  color: #D40000;
   border-radius: 4em;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.6);
-  background: rgba(255,255,255,0.5);/*rgba(255,208,79,0.7);*/
+  background: rgba(255,255,255,0.5);
   padding: 1.5em 1em 1.5em 1em;
   margin: auto;
   min-width: 250px;
@@ -78,7 +79,7 @@ p {
 }
 
 .button {
-  color: /*#C64519;*/ #D40000;
+  color: #D40000;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.7);
   font-size: 1.4em;
   font-family: inherit;
@@ -91,7 +92,7 @@ p {
 }
 
 .button:hover {
-  color: /*#EEA63E;*/#FFAE00; 
+  color: #FFAE00;
   font-size: 1.5em;
   -webkit-transition: 0.1s ease-out all;
 }

@@ -1,0 +1,43 @@
+body {
+  width: 60vw;
+  margin: auto;
+}
+
+fieldset {
+  border: none;
+}
+
+input {
+  margin-right: 15vw;
+  background: rgba(212,0,0,0.3);
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+h1 {
+  text-align: center;
+  color: #D40000;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+}
+
+.save {
+  background: rgba(98,166,0,0.4);
+  font-size: 1.2em;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.required-indicator {
+  color: #D40000;
+  font-weight: bold;
+}
+
+.fieldcontain, .input {
+  text-align: right;
+  margin: 0.5em;
+}
+
+.fieldset, .buttons {
+  text-align: right;
+}
