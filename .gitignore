@@ -34,9 +34,4 @@
 
 #
 .gradle/*
-build/.asscache
-build/stacktrace.log
-build/classes/*
-build/resources/*
-build/springloaded/*
-build/tmp/*
+build/
