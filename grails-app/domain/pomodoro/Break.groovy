@@ -10,7 +10,8 @@ class Break extends Interval {
     final String shortBreakNotif = "Time for a short break!"
     final String longBreakNotif = "Time for a long break!"
 
-    public Break() {
+    public Break(Session session) {
+      this.session = session
       // if ((App.pomodoroCount % 4) == 0) {
       //   App.notify(longBreakNotif)
       //   duration = Configuration.longRestDurationInMinutes
@@ -22,7 +23,7 @@ class Break extends Interval {
       start()
     }
 
-    public void start() {
+    public Interval start() {
       // if (!active) {
       //   active = true
       //   long startTime = System.currentTimeMillis()
@@ -35,6 +36,7 @@ class Break extends Interval {
       //   }
       //   new Thread(wait).start()
       // }
+      return new Pomodoro()
     }
 
     public void finish() {

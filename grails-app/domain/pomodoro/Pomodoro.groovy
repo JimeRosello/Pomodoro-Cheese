@@ -15,9 +15,9 @@ class Pomodoro extends Interval {
       start()
     }
 
-    public void start() {
+    public Interval start() {
       if (!active) {
-        // App.notify(workNotif)
+        session.notify(workNotif)
         active = true
         long startTime = System.currentTimeMillis()
         endTime = startTime + duration * 60 * 1000

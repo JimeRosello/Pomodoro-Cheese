@@ -2,10 +2,21 @@ package pomodoro
 
 class Session {
 
+    private Session instance = null
     private User user
-    private Interval currentInterval = new None()
+    private Interval currentInterval = new None(this)
     public LinkedList<Pomodoro> pomodoros = new LinkedList<Pomodoro>()
 
+    private Session() { }
+
+    public Session getSession() {
+      if (instance == null) {
+        instance = new Session()
+      }
+      return instance
+    }
+
+    // Starts a new Pomodoro interval
     public void start() {
       currentInterval = currentInterval.start()
     }
