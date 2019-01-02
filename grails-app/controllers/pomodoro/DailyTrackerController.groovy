@@ -5,68 +5,68 @@ import static org.springframework.http.HttpStatus.*
 
 class DailyTrackerController {
 
-    DailyActivityService dailyActivityService
+    DailyTrackerService dailyTrackerService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond dailyActivityService.list(params), model:[dailyActivityCount: dailyActivityService.count()]
+        respond dailyTrackerService.list(params), model:[dailyTrackerCount: dailyTrackerService.count()]
     }
 
     def show(Long id) {
-        respond dailyActivityService.get(id)
+        respond dailyTrackerService.get(id)
     }
 
     def create() {
-        respond new DailyActivity(params)
+        respond new DailyTracker(params)
     }
 
-    def save(DailyActivity dailyActivity) {
-        if (dailyActivity == null) {
+    def save(DailyTracker dailyTracker) {
+        if (dailyTracker == null) {
             notFound()
             return
         }
 
         try {
-            dailyActivityService.save(dailyActivity)
+            dailyTrackerService.save(dailyTracker)
         } catch (ValidationException e) {
-            respond dailyActivity.errors, view:'create'
+            respond dailyTracker.errors, view:'create'
             return
         }
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'dailyActivity.label', default: 'DailyActivity'), dailyActivity.id])
-                redirect dailyActivity
+                flash.message = message(code: 'default.created.message', args: [message(code: 'dailyTracker.label', default: 'DailyTracker'), dailyTracker.id])
+                redirect dailyTracker
             }
-            '*' { respond dailyActivity, [status: CREATED] }
+            '*' { respond dailyTracker, [status: CREATED] }
         }
     }
 
     def edit(Long id) {
-        respond dailyActivityService.get(id)
+        respond dailyTrackerService.get(id)
     }
 
-    def update(DailyActivity dailyActivity) {
-        if (dailyActivity == null) {
+    def update(DailyTracker dailyTracker) {
+        if (dailyTracker == null) {
             notFound()
             return
         }
 
         try {
-            dailyActivityService.save(dailyActivity)
+            dailyTrackerService.save(dailyTracker)
         } catch (ValidationException e) {
-            respond dailyActivity.errors, view:'edit'
+            respond dailyTracker.errors, view:'edit'
             return
         }
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'dailyActivity.label', default: 'DailyActivity'), dailyActivity.id])
-                redirect dailyActivity
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'dailyTracker.label', default: 'DailyTracker'), dailyTracker.id])
+                redirect dailyTracker
             }
-            '*'{ respond dailyActivity, [status: OK] }
+            '*'{ respond dailyTracker, [status: OK] }
         }
     }
 
@@ -76,11 +76,11 @@ class DailyTrackerController {
             return
         }
 
-        dailyActivityService.delete(id)
+        dailyTrackerService.delete(id)
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'dailyActivity.label', default: 'DailyActivity'), id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'dailyTracker.label', default: 'DailyTracker'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class DailyTrackerController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'dailyActivity.label', default: 'DailyActivity'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'dailyTracker.label', default: 'DailyTracker'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

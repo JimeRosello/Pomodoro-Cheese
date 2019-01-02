@@ -1,3 +1,5 @@
+package pomodoro
+
 public enum Priority {
   TODAY,
   THIS_WEEK,
