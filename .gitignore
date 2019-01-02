@@ -34,4 +34,4 @@
 
 #
 /.gradle
-build/*
+/build
