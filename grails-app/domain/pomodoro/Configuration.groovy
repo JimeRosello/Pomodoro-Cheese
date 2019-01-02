@@ -13,18 +13,18 @@ class Configuration {
 
     private void initializeWithSuggestedActivities() {
       leisureActivities = [
-        new LeisureActivity("a walk around the block", Library.Duration.SHORT),
-        new LeisureActivity("making a cup of tea", Library.Duration.SHORT),
-        new LeisureActivity("listening to some music", Library.Duration.SHORT),
-        new LeisureActivity("a short stretch", Library.Duration.SHORT),
-        new LeisureActivity("a long stretch", Library.Duration.LONG),
-        new LeisureActivity("a little meditation", Library.Duration.LONG),
-        new LeisureActivity("a walk around the block", Library.Duration.LONG),
-        new LeisureActivity("listening to some music", Library.Duration.LONG),
+        new LeisureActivity("a walk around the block", Duration.SHORT),
+        new LeisureActivity("making a cup of tea", Duration.SHORT),
+        new LeisureActivity("listening to some music", Duration.SHORT),
+        new LeisureActivity("a short stretch", Duration.SHORT),
+        new LeisureActivity("a long stretch", Duration.LONG),
+        new LeisureActivity("a little meditation", Duration.LONG),
+        new LeisureActivity("a walk around the block", Duration.LONG),
+        new LeisureActivity("listening to some music", Duration.LONG),
       ]
     }
 
-    public LeisureActivity getRandomActivity(Library.Duration duration) {
+    public LeisureActivity getRandomActivity(Duration duration) {
       LinkedList<LeisureActivity> list = leisureActivities.findAll {
         it.duration == duration
       }
@@ -32,11 +32,11 @@ class Configuration {
       return list.first()
     }
 
-    public String addCustomActivity(String name, Library.Duration duration) {
+    public String addCustomActivity(String name, Duration duration) {
       leisureActivities.add(new LeisureActivity(name, duration))
     }
 
-    public void removeActivity(String name, Library.Duration duration) {
+    public void removeActivity(String name, Duration duration) {
       leisureActivities.remove {
         it.name == name && it.duration == duration
       }
@@ -53,7 +53,7 @@ class Configuration {
     public void changeLongRestDurationInMinutes(int longRestDurationInMinutes) {
       this.longRestDurationInMinutes = longRestDurationInMinutes
     }
-    
+
     static constraints = {
     }
 }
