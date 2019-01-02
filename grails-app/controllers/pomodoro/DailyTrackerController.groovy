@@ -3,7 +3,7 @@ package pomodoro
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
-class DailyActivityController {
+class DailyTrackerController {
 
     DailyActivityService dailyActivityService
 
