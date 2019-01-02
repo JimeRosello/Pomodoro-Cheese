@@ -33,5 +33,6 @@
 /target
 
 #
-.gradle/*
-build/
+/.gradle/*
+/build/
+/grails-app/*
