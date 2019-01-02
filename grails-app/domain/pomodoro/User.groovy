@@ -7,6 +7,7 @@ class User {
     String password
     DailyTracker dailyTracker
     Session session
+    Board board 
     Configuration configuration
 
     public User(String username) {

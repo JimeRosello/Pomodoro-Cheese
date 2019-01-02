@@ -4,8 +4,7 @@ class Session {
 
     private User user
     private Interval currentInterval = new None()
-    public int pomodoroCount = 0
-    public Board board = new Board()
+    public LinkedList<Pomodoro> pomodoros = new LinkedList<Pomodoro>()
 
     public void start() {
       currentInterval = currentInterval.start()

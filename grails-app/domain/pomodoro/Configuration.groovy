@@ -5,7 +5,6 @@ class Configuration {
     public int workDurationInMinutes = 25
     public int shortRestDurationInMinutes = 5
     public int longRestDurationInMinutes = 15
-    //public static App.ColorScheme colorScheme
     public static LinkedList<LeisureActivity> leisureActivities
 
     public Configuration() {
@@ -43,6 +42,18 @@ class Configuration {
       }
     }
 
+    public void changeWorkDuration(int workDurationInMinutes) {
+      this.workDurationInMinutes = workDurationInMinutes
+    }
+
+    public void changeShortRestDurationInMinutes(int shortRestDurationInMinutes) {
+      this.shortRestDurationInMinutes = shortRestDurationInMinutes
+    }
+
+    public void changeLongRestDurationInMinutes(int longRestDurationInMinutes) {
+      this.longRestDurationInMinutes = longRestDurationInMinutes
+    }
+    
     static constraints = {
     }
 }
