@@ -1,6 +1,0 @@
-#Wed, 04 Jul 2018 19:47:53 -0300
-
-info.app.version=0.1
-info.app.name=Pomodoro
-grails.env=development
-info.app.grailsVersion=3.3.6
