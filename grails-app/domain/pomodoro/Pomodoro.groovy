@@ -7,10 +7,9 @@ class Pomodoro extends Interval {
 
     Task task
     boolean active
-    String workNotif = "Time to work!"
+    final String workNotif = "Time to work!"
 
     public Pomodoro() {
-      //duration = Configuration.workDurationInMinutes
       duration = 1
       active = false
       start()
@@ -18,25 +17,22 @@ class Pomodoro extends Interval {
 
     public void start() {
       if (!active) {
-        //App.notify(workNotif)
+        // App.notify(workNotif)
         active = true
         long startTime = System.currentTimeMillis()
         endTime = startTime + duration * 60 * 1000
-        Runnable wait = new Runnable() {
-          public void run() {
-              TimeUnit.MILLISECONDS.sleep(duration)
-              finish()
-          }
-        }
-        new Thread(wait).start()
+        // Runnable wait = new Runnable() {
+        //   public void run() {
+        //       TimeUnit.MILLISECONDS.sleep(duration)
+        //       finish()
+        //   }
+        // }
+        // new Thread(wait).start()
       }
     }
 
     public void finish() {
-      active = false 
-      //App.pomodoroCount++
-      //App.increasePomodorosInCurrentTask()
-      //App.updateInterval(new Break())
+      active = false
     }
 
     static constraints = {
