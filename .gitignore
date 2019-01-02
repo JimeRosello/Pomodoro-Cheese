@@ -33,5 +33,5 @@
 /target
 
 #
-/.gradle
-/build/*
+.gradle/*
+build/*
