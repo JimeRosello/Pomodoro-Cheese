@@ -14,6 +14,7 @@ class UrlMappings {
         "404"(view:'/notFound')
         "/board"(view:"/board")
         "/start"(view:"/start")
-        name "crearTarea":"/createTask"(view:"/task/create") //g:link mapping="name"
+        name "createTask":"/createTask"(view:"/task/create") //g:link mapping="name"
+        name "viewTasks":"/viewTasks"(view:"/task/view")
     }
 }

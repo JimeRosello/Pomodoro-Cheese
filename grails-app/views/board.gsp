@@ -30,39 +30,39 @@
       </aside>
 
       <section class="board">
-              <ul class="boardContent">
-                <li class="boardColumn">
-                  <h1>To do</h1>
-                  <ul class="taskList">
-                        <li class="task">
-                        </li>
-                  </ul>
-                </li>
-                <li class="boardColumn">
-                  <h1>In progress</h1>
-                  <ul class="taskList">
-                    <li class="task"></li>
-                  </ul>
-                </li>
-                <li class="boardColumn">
-                  <h1>Done</h1>
-                  <ul class="taskList">
+            <ul class="boardContent">
+              <li class="boardColumn">
+                <h1>To do</h1>
+                <ul class="taskList">
+                      <li class="task">
+                      </li>
+                </ul>
+              </li>
+              <li class="boardColumn">
+                <h1>In progress</h1>
+                <ul class="taskList">
+                  <li class="task"></li>
+                </ul>
+              </li>
+              <li class="boardColumn">
+                <h1>Done</h1>
+                <ul class="taskList">
 
-                  </ul>
-                </li>
-              </ul>
-                          <!--          <div id="controllers" role="navigation">
-                          <h2>Available Controllers:</h2>
-                          <ul>
-                              <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                                  <li class="controller">
-                                      <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                                  </li>
-                              </g:each>
-                          </ul>
-                        </div>
-                      </div>-->
-          <a href="#" onclick="openPopup();"><div class="addTaskButton" role="contentinfo">Add task</div></a>
+                </ul>
+              </li>
+            </ul>
+                        <!--          <div id="controllers" role="navigation">
+                        <h2>Available Controllers:</h2>
+                        <ul>
+                            <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+                                <li class="controller">
+                                    <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
+                                </li>
+                            </g:each>
+                        </ul>
+                      </div>
+                    </div>-->
+        <a href="#" onclick="openPopup();"><div class="addTaskButton" role="contentinfo">Add task</div></a>
       </section>
     </main>
 

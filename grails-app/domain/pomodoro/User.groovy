@@ -2,15 +2,15 @@ package pomodoro
 
 class User {
 
-    String name 
-    String email 
-    String password 
-    DailyActivity dailyActivity 
-    Session session 
-    Configuration configuration 
+    String usename 
+    String email
+    String password
+    DailyActivity dailyActivity
+    Session session
+    Configuration configuration
 
     public User(String username) {
-      this.name = username 
+      this.usename = username 
     }
 
     static constraints = {

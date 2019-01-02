@@ -21,9 +21,9 @@ if (typeof jQuery !== 'undefined') {
 }
 
 function loadPage(page) {
-    document.getElementsByClassName("popup")[0].innerHTML =
-      '<a class="close" href="#" onclick="closePopup();">[X]</a><embed src="'+
-      page +'" type="text/html" class="popup-content"/></embed>';
+  document.getElementsByClassName("popup")[0].innerHTML =
+    '<a class="close" href="#" onclick="closePopup();">[X]</a><embed src="'+
+    page +'" type="text/html" class="popup-content"/></embed>';
 }
 
 function openPopup() {

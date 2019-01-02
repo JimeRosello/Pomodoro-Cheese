@@ -15,7 +15,11 @@ class TaskController {
     }
 
     def show(Long id) {
-        respond taskService.get(id)
+      respond taskService.get(id)
+    }
+
+    def showNames() {
+      respond taskService.list(name)
     }
 
     def create() {

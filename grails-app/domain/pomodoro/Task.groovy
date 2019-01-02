@@ -2,20 +2,29 @@ package pomodoro
 
 class Task extends Activity {
 
-    int pomodoros = 0 
-    //Set<Pomodoro> pomodoros
-    int estimatedPomodoros 
-    int priority 
+  Set<Pomodoro> pomodoros
+  int estimatedPomodoros
+  int priority
 
-    public Task(String name, int estimatedPomodoros) {
-      this.name = name 
-      this.estimatedPomodoros = estimatedPomodoros 
-    }
+  public Task(String name, int estimatedPomodoros) {
+    this.pomodoros = new HashSet<>()
+    this.name = name
+    this.estimatedPomodoros = estimatedPomodoros
+  }
 
-    public void complete() {
+  public void complete() {
 
-    }
+  }
 
-    static constraints = {
-    }
+  public int pomodoros() {
+    return pomodoros.size()
+  }
+
+  public void add(Pomodoro pomodoro) {
+    pomodoros.add(pomodoro)
+  }
+
+  static constraints = {
+  }
+
 }
