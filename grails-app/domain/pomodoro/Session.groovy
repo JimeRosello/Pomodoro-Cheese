@@ -2,10 +2,21 @@ package pomodoro
 
 class Session {
 
+    private Session instance = null
     private User user
-    private Interval currentInterval = new None()
-    public LinkedList<Pomodoro> pomodoros = new LinkedList<Pomodoro>()
+    private Interval currentInterval = new None(this)
+    public LinkedList<Interval> intervals = new LinkedList<Interval>()
 
+    private Session() { }
+
+    public Session getSession() {
+      if (instance == null) {
+        instance = new Session()
+      }
+      return instance
+    }
+
+    // Starts a new Pomodoro interval
     public void start() {
       currentInterval = currentInterval.start()
     }
@@ -29,6 +40,14 @@ class Session {
 
     public void enterFatigueIndex() {
       // TO DO: Implement
+    }
+
+    public int pomodoroCount() {
+      int count = 0
+      this.intervals.each {
+        x -> count = count + x.countPomodoros()
+      }
+      return count 
     }
 
     static constraints = {

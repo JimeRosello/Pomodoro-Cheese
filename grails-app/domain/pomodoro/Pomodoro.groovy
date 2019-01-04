@@ -1,38 +1,34 @@
 package pomodoro
+
+import pomodoro.exceptions.*
 import java.util.concurrent.TimeUnit
 import java.lang.Thread
 import java.lang.Runnable
+import IntervalInCourseException.*
 
 class Pomodoro extends Interval {
 
     Task task
-    boolean active
     final String workNotif = "Time to work!"
 
-    public Pomodoro() {
+    public Pomodoro(Session session) {
+      this.session = session
       duration = 1
-      active = false
-      start()
+      this.session.notify(workNotif)
+      long startTime = System.currentTimeMillis()
+      endTime = startTime + duration * 60 * 1000
     }
 
-    public void start() {
-      if (!active) {
-        // App.notify(workNotif)
-        active = true
-        long startTime = System.currentTimeMillis()
-        endTime = startTime + duration * 60 * 1000
-        // Runnable wait = new Runnable() {
-        //   public void run() {
-        //       TimeUnit.MILLISECONDS.sleep(duration)
-        //       finish()
-        //   }
-        // }
-        // new Thread(wait).start()
-      }
+    public Interval start() {
+      throw new IntervalInCourseException("There is already a Pomodoro in course")
     }
 
-    public void finish() {
-      active = false
+    public Interval finish() {
+      return new Break(this.session)
+    }
+
+    public int countPomodoros() {
+      return 1
     }
 
     static constraints = {

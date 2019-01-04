@@ -2,8 +2,16 @@ package pomodoro
 
 class None extends Interval {
 
-    public void start() {
-      //App.updateInterval(new Pomodoro()) 
+    public None(Session session) {
+      this.session = session
+    }
+
+    public Interval start() {
+      return new Pomodoro(this.session)
+    }
+
+    public int countPomodoros() {
+      return 0
     }
 
     static constraints = {

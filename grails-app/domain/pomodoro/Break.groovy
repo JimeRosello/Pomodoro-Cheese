@@ -1,4 +1,6 @@
 package pomodoro
+
+import pomodoro.exceptions.*
 import java.util.concurrent.TimeUnit
 import java.lang.Thread
 import java.lang.Runnable
@@ -6,39 +8,30 @@ import java.lang.Runnable
 class Break extends Interval {
 
     LeisureActivity activity
-    boolean active
     final String shortBreakNotif = "Time for a short break!"
     final String longBreakNotif = "Time for a long break!"
 
-    public Break() {
-      // if ((App.pomodoroCount % 4) == 0) {
-      //   App.notify(longBreakNotif)
-      //   duration = Configuration.longRestDurationInMinutes
-      // } else {
-      //   App.notify(shortBreakNotif)
-      //   duration = Configuration.shortRestDurationInMinutes
-      // }
-      active = false
-      start()
+    public Break(Session session) {
+      this.session = session
+      if (session.pomodoroCount() % 4 == 0) {
+        duration = this.session.user.configuration.longRestDurationInMinutes
+        session.notify(longBreakNotif)
+      } else {
+        session.notify(shortBreakNotif)
+        duration = this.session.user.configuration.shortRestDurationInMinutes
+      }
     }
 
-    public void start() {
-      // if (!active) {
-      //   active = true
-      //   long startTime = System.currentTimeMillis()
-      //   endTime = startTime + duration * 60 * 1000
-      //   Runnable wait = new Runnable() {
-      //     public void run() {
-      //         TimeUnit.MILLISECONDS.sleep(duration)
-      //         finish()
-      //     }
-      //   }
-      //   new Thread(wait).start()
-      // }
+    public Interval start() {
+      throw new IntervalInCourseException("There is already a Break in course")
     }
 
-    public void finish() {
-      active = false
+    public Interval finish() {
+      return new Pomodoro()
+    }
+
+    public int countPomodoros() {
+      return 0
     }
 
     static constraints = {
