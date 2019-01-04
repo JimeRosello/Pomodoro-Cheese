@@ -11,21 +11,15 @@ class Pomodoro extends Interval {
     Task task
     final String workNotif = "Time to work!"
 
-    public Pomodoro() {
+    public Pomodoro(Session session) {
+      this.session = session
       duration = 1
-      session.notify(workNotif)
+      this.session.notify(workNotif)
       long startTime = System.currentTimeMillis()
       endTime = startTime + duration * 60 * 1000
     }
 
     public Interval start() {
-        // Runnable wait = new Runnable() {
-        //   public void run() {
-        //       TimeUnit.MILLISECONDS.sleep(duration)
-        //       finish()
-        //   }
-        // }
-        // new Thread(wait).start()
       throw new IntervalInCourseException("There is already a Pomodoro in course")
     }
 
