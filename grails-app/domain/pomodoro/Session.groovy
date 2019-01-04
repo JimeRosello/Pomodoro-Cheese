@@ -5,7 +5,8 @@ class Session {
     private Session instance = null
     private User user
     private Interval currentInterval = new None(this)
-    public LinkedList<Pomodoro> pomodoros = new LinkedList<Pomodoro>()
+    public LinkedList<Interval> intervals = new LinkedList<Interval>()
+    //public LinkedList<Pomodoro> pomodoros = new LinkedList<Pomodoro>()
 
     private Session() { }
 
