@@ -18,6 +18,8 @@ abstract class Interval {
       return endTime - System.currentTimeMillis()
     }
 
+    public abstract int countPomodoros() 
+
     static constraints = {
     }
 }

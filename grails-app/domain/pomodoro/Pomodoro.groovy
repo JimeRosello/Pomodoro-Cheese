@@ -27,6 +27,10 @@ class Pomodoro extends Interval {
       return new Break(this.session)
     }
 
+    public int countPomodoros() {
+      return 1
+    }
+
     static constraints = {
     }
 }

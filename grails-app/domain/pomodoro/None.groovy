@@ -10,6 +10,10 @@ class None extends Interval {
       return new Pomodoro(this.session)
     }
 
+    public int countPomodoros() {
+      return 0
+    }
+
     static constraints = {
     }
 }

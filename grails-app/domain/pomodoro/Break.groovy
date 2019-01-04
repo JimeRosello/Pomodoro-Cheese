@@ -14,11 +14,11 @@ class Break extends Interval {
     public Break(Session session) {
       this.session = session
       if (session.pomodoroCount() % 4 == 0) {
-        duration = Configuration.longRestDurationInMinutes
+        duration = this.session.user.configuration.longRestDurationInMinutes
         session.notify(longBreakNotif)
       } else {
         session.notify(shortBreakNotif)
-        duration = Configuration.shortRestDurationInMinutes
+        duration = this.session.user.configuration.shortRestDurationInMinutes
       }
     }
 
@@ -28,6 +28,10 @@ class Break extends Interval {
 
     public Interval finish() {
       return new Pomodoro()
+    }
+
+    public int countPomodoros() {
+      return 0
     }
 
     static constraints = {

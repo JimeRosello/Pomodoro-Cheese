@@ -6,7 +6,6 @@ class Session {
     private User user
     private Interval currentInterval = new None(this)
     public LinkedList<Interval> intervals = new LinkedList<Interval>()
-    //public LinkedList<Pomodoro> pomodoros = new LinkedList<Pomodoro>()
 
     private Session() { }
 
@@ -41,6 +40,14 @@ class Session {
 
     public void enterFatigueIndex() {
       // TO DO: Implement
+    }
+
+    public int pomodoroCount() {
+      int count = 0
+      this.intervals.each {
+        x -> count = count + x.countPomodoros()
+      }
+      return count 
     }
 
     static constraints = {
