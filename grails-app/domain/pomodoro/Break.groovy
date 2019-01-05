@@ -1,9 +1,6 @@
 package pomodoro
 
 import pomodoro.exceptions.*
-import java.util.concurrent.TimeUnit
-import java.lang.Thread
-import java.lang.Runnable
 
 class Break extends Interval {
 
@@ -20,6 +17,8 @@ class Break extends Interval {
         session.notify(shortBreakNotif)
         duration = this.session.user.configuration.shortRestDurationInMinutes
       }
+      startTime = LocalDateTime.now()
+      endTime = startTime.plusMinutes(duration * 60 * 1000)
     }
 
     public Interval start() {

@@ -1,24 +1,30 @@
 package pomodoro
 
+import pomodoro.exceptions.*
+
 class Session {
 
-    private Session instance = null
+    // private Session instance = null
     private User user
     private Interval currentInterval = new None(this)
     public LinkedList<Interval> intervals = new LinkedList<Interval>()
 
-    private Session() { }
+    // public Session() { }
+    //
+    // public static Session getSession() {
+    //   if (instance == null) {
+    //     instance = new Session()
+    //   }
+    //   return instance
+    // }
 
-    public Session getSession() {
-      if (instance == null) {
-        instance = new Session()
-      }
-      return instance
-    }
-
-    // Starts a new Pomodoro interval
+    // Starts a new Pomodoro interval or throws error if an existent cycle is running
     public void start() {
-      currentInterval = currentInterval.start()
+      try {
+        currentInterval = currentInterval.start()
+      } catch (IntervalInCourseException e) {
+        notify(e.message)
+      }
     }
 
     public void updateInterval(Interval interval) {
@@ -27,11 +33,6 @@ class Session {
 
     public void notify(String message) {
       // TO DO: Implement
-    }
-
-    public void increasePomodorosInCurrentTask() {
-      if (this.board.inProgress != null)
-        this.board.inProgress.pomodoros++
     }
 
     public void calculateProductivityIndex() {
@@ -47,7 +48,7 @@ class Session {
       this.intervals.each {
         x -> count = count + x.countPomodoros()
       }
-      return count 
+      return count
     }
 
     static constraints = {

@@ -1,9 +1,12 @@
 package pomodoro
 
+import java.time.LocalDateTime
+
 abstract class Interval {
 
     int duration
-    long endTime = 9999999
+    LocalDateTime startTime
+    LocalDateTime endTime
     Session session
     // buscar jodatime o el api nueva de java8
     // local date time
@@ -18,7 +21,7 @@ abstract class Interval {
       return endTime - System.currentTimeMillis()
     }
 
-    public abstract int countPomodoros() 
+    public abstract int countPomodoros()
 
     static constraints = {
     }
