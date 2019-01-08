@@ -9,7 +9,7 @@ class DailyTracker {
 
     public long calculateProductivityIndex() {
       return 0.75 * completedPomodoros / totalHighPriorityTasks +
-             (overallFeeling == Feeling.MOTIVATED? 0.25 : 0)
+        (overallFeeling == Feeling.MOTIVATED? 0.25 : 0)
     }
 
     public long calculateTirednessIndex() {

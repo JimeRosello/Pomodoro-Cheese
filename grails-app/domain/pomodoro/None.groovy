@@ -4,6 +4,7 @@ class None extends Interval {
 
     public None(Session session) {
       this.session = session
+      this.continues = false 
     }
 
     public Interval start() {

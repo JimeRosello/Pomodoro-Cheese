@@ -4,27 +4,33 @@ import pomodoro.exceptions.*
 
 class Session {
 
-    // private Session instance = null
     private User user
     private Interval currentInterval = new None(this)
     public LinkedList<Interval> intervals = new LinkedList<Interval>()
 
-    // public Session() { }
-    //
-    // public static Session getSession() {
-    //   if (instance == null) {
-    //     instance = new Session()
-    //   }
-    //   return instance
-    // }
+    public Session(String username) {
+      //user = findByUsername(username)
+    }
 
     // Starts a new Pomodoro interval or throws error if an existent cycle is running
     public void start() {
       try {
         currentInterval = currentInterval.start()
-      } catch (IntervalInCourseException e) {
+      }
+      catch (IntervalInCourseException e) {
         notify(e.message)
       }
+      while (currentInterval.continues()) {
+        while (LocalDateTime.now() != currentInterval.endTime) {
+          continue
+        }
+        currentInterval = currentInterval.finish().start()
+      }
+    }
+
+    // Stops the current interval and stops the ongoing cycle
+    public void stop() {
+      currentInterval = currentInterval.stop()
     }
 
     public void updateInterval(Interval interval) {
@@ -32,15 +38,7 @@ class Session {
     }
 
     public void notify(String message) {
-      // TO DO: Implement
-    }
-
-    public void calculateProductivityIndex() {
-      //double index = 0.75
-    }
-
-    public void enterFatigueIndex() {
-      // TO DO: Implement
+      //(new Notification(message)).show()
     }
 
     public int pomodoroCount() {

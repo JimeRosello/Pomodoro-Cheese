@@ -9,6 +9,7 @@ class Pomodoro extends Interval {
 
     public Pomodoro(Session session) {
       this.session = session
+      this.continues = true 
       this.session.notify(workNotif)
       duration = 1
       startTime = LocalDateTime.now()

@@ -10,6 +10,7 @@ class Break extends Interval {
 
     public Break(Session session) {
       this.session = session
+      this.continues = true 
       if (session.pomodoroCount() % 4 == 0) {
         duration = this.session.user.configuration.longRestDurationInMinutes
         session.notify(longBreakNotif)

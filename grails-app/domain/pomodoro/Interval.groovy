@@ -8,6 +8,7 @@ abstract class Interval {
     LocalDateTime startTime
     LocalDateTime endTime
     Session session
+    boolean continues
     // buscar jodatime o el api nueva de java8
     // local date time
 
@@ -16,6 +17,14 @@ abstract class Interval {
     }
 
     public abstract Interval start()
+
+    public boolean continues() {
+      return continues
+    }
+
+    public Interval stop() {
+      return new None()
+    }
 
     public long remainingTime() {
       return endTime - System.currentTimeMillis()
