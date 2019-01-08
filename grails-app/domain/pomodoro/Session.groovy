@@ -1,6 +1,9 @@
 package pomodoro
 
 import pomodoro.exceptions.*
+import javax.swing.JOptionPane
+import java.io.*
+import javax.sound.sampled.*
 
 class Session {
 
@@ -38,7 +41,22 @@ class Session {
     }
 
     public void notify(String message) {
-      //(new Notification(message)).show()
+      try {
+        File audioFile = new File("../utils/alert.mp3")
+        AudioInputStream stream;
+        AudioFormat format;
+        DataLine.Info info;
+        Clip clip;
+
+        stream = AudioSystem.getAudioInputStream(audioFile);
+        format = stream.getFormat();
+        info = new DataLine.Info(Clip.class, format);
+        clip = (Clip) AudioSystem.getLine(info);
+        clip.open(stream);
+        clip.start();
+      }
+      catch (Exception e) { }
+      JOptionPane.showMessageDialog(null, message, message, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public int pomodoroCount() {
