@@ -1,10 +1,6 @@
 package pomodoro
 
 import pomodoro.exceptions.*
-import java.util.concurrent.TimeUnit
-import java.lang.Thread
-import java.lang.Runnable
-import IntervalInCourseException.*
 
 class Pomodoro extends Interval {
 
@@ -13,10 +9,11 @@ class Pomodoro extends Interval {
 
     public Pomodoro(Session session) {
       this.session = session
-      duration = 1
+      this.continues = true 
       this.session.notify(workNotif)
-      long startTime = System.currentTimeMillis()
-      endTime = startTime + duration * 60 * 1000
+      duration = 1
+      startTime = LocalDateTime.now()
+      endTime = startTime.plusMinutes(duration * 60 * 1000)
     }
 
     public Interval start() {

@@ -6,7 +6,6 @@ class User {
     String email
     String password
     DailyTracker dailyTracker
-    Session session
     Board board 
     Configuration configuration
 

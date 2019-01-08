@@ -2,12 +2,11 @@ package pomodoro
 
 class Task extends Activity {
 
-  Set<Pomodoro> pomodoros
+  Set<Pomodoro> pomodoros = new HashSet<>()
   int estimatedPomodoros
   int priority
 
   public Task(String name, int estimatedPomodoros) {
-    this.pomodoros = new HashSet<>()
     this.name = name
     this.estimatedPomodoros = estimatedPomodoros
   }
